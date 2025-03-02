@@ -72,6 +72,6 @@ pip install -r requirements.txt
 
 ✔ The impact of contract type on churn.✔ How SMOTE helps handle imbalanced datasets.✔ The power of XGBoost for classification problems.
 
-## 📊 Next Steps: Deploying this model as a web app using Flask or Streamlit!
+### 📊 Next Steps: Deploying this model as a web app using Flask or Streamlit!
 
-# 💡 Contributions & Feedback: If you have suggestions, feel free to open an issue or fork the repository! 🎯
+### 💡 Contributions & Feedback: If you have suggestions, feel free to open an issue or fork the repository! 🎯
