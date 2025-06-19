@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        input, select { width: 100%; padding: 8px; margin: 10px 0; }
+        button { padding: 10px; background: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background: darkblue; }
+    </style>
+</head>
+<body>
+
+    <h2>Customer Churn Prediction</h2>
+
+    <form action="/predict" method="post">
+        <label>Tenure (Months)</label>
+        <input type="number" name="tenure" required>
+
+        <label>Monthly Charges</label>
+        <input type="number" name="monthly_charges" required>
+
+        <label>Total Charges</label>
+        <input type="number" name="total_charges" required>
+
+        <label>Payment Method</label>
+        <select name="payment_method">
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Electronic check">Electronic check</option>
+            <option value="Mailed check">Mailed check</option>
+        </select>
+
+        <label>Internet Service</label>
+        <select name="internet_service">
+            <option value="DSL">DSL</option>
+            <option value="Fiber Optic">Fiber Optic</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>Contract Type</label>
+        <select name="contract_type">
+            <option value="Month-to-Month">Month-to-Month</option>
+            <option value="One Year">One Year</option>
+            <option value="Two Year">Two Year</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+</body>
+</html>
