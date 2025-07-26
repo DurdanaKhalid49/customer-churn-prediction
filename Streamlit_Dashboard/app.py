@@ -40,8 +40,8 @@ st.markdown("Fill in the customer information to get churn prediction.")
 # ---------------------------
 gender = st.selectbox("Gender", ["Male", "Female"])
 tenure = st.number_input("Tenure (Months)", min_value=0, value=12)
-monthly_charges = st.number_input("Monthly Charges ($)", min_value=0.0, value=50.0)
-total_charges = st.number_input("Total Charges ($)", min_value=0.0, value=600.0)
+monthly_charges = st.number_input("Monthly Charges ($)", min_value=0.0, value=50.0,step=1.00)
+total_charges = st.number_input("Total Charges ($)", min_value=0.0, value=600.0,step=1.00)
 
 contract = st.selectbox("Contract Type", ["Month-to-month", "One year", "Two year"])
 internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
