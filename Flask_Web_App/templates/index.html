@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📉 Customer Churn Prediction</h1>
+        <form method="POST">
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <label for="tenure">Tenure (Months)</label>
+            <input type="number" name="tenure" id="tenure" required value="12">
+
+            <label for="monthly_charges">Monthly Charges ($)</label>
+            <input type="number" step="0.01" name="monthly_charges" id="monthly_charges" required value="50.0">
+
+            <label for="total_charges">Total Charges ($)</label>
+            <input type="number" step="0.01" name="total_charges" id="total_charges" required value="600.0">
+
+            <label for="contract">Contract</label>
+            <select name="contract" id="contract" required>
+                <option>Month-to-month</option>
+                <option>One year</option>
+                <option>Two year</option>
+            </select>
+
+            <label for="internet_service">Internet Service</label>
+            <select name="internet_service" id="internet_service" required>
+                <option>DSL</option>
+                <option>Fiber optic</option>
+                <option>No</option>
+            </select>
+
+            <label for="payment_method">Payment Method</label>
+            <select name="payment_method" id="payment_method" required>
+                <option>Electronic check</option>
+                <option>Mailed check</option>
+                <option>Bank transfer</option>
+                <option>Credit card</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                {% if prediction == 'Yes' %}
+                    <p class="danger">⚠️ This customer is likely to churn.</p>
+                {% elif prediction == 'No' %}
+                    <p class="success">✅ This customer is likely to stay.</p>
+                {% else %}
+                    <p class="error">{{ prediction }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
