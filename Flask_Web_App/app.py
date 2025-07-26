@@ -4,9 +4,11 @@ import pandas as pd
 import os
 app = Flask(__name__)
 
-# Load model and label encoder
-model = joblib.load("model/churn_pipeline.joblib")
-label_encoder = joblib.load("model/label_encoder.joblib")
+MODEL_PATH = os.path.join("model", "churn_pipeline.joblib")
+ENCODER_PATH = os.path.join("model", "label_encoder.joblib")
+
+model = joblib.load(MODEL_PATH)
+label_encoder = joblib.load(ENCODER_PATH)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
