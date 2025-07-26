@@ -1,10 +1,18 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import pathlib
 
-# Load model and label encoder
-model = joblib.load("model/churn_pipeline.joblib")
-label_encoder = joblib.load("model/label_encoder.joblib")
+
+# Define base path relative to this file
+BASE_DIR = pathlib.Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "model" / "churn_pipeline.joblib"
+ENCODER_PATH = BASE_DIR / "model" / "label_encoder.joblib"
+
+# Load model and encoder
+model = joblib.load(MODEL_PATH)
+label_encoder = joblib.load(ENCODER_PATH)
+
 
 st.set_page_config(page_title="Customer Churn Prediction", layout="centered")
 
